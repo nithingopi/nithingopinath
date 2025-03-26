@@ -3,111 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nithin Gopinath - Tech Innovator</title>
+    <title>Nithin Gopinath | AI Solutions Architect</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2ecc71;
-            --background-color: #f4f4f4;
-            --text-color: #333;
-            --accent-color: #e74c3c;
+            --deep-black: #0A0A0A;
+            --soft-white: #F4F4F4;
+            --accent-blue: #3498DB;
+            --accent-green: #2ECC71;
+            --dark-gray: #2C3E50;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            background-color: var(--deep-black);
+            color: var(--soft-white);
             line-height: 1.6;
-            background: linear-gradient(135deg, #f6f8f9 0%, #e5ebee 100%);
-            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--soft-white);
+            text-decoration: none;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: rgba(244, 244, 244, 0.7);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-blue);
         }
 
         .hero {
-            position: relative;
             height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            text-align: center;
+            position: relative;
             overflow: hidden;
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
-            animation: fadeIn 1s ease-out;
+            z-index: 10;
+            text-align: center;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--accent-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .hero p {
+        .hero-subtitle {
             font-size: 1.5rem;
+            color: rgba(244, 244, 244, 0.8);
             max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.9;
+            margin: 0 auto 40px;
         }
 
-        .tech-icons {
+        .tech-stack {
             display: flex;
             justify-content: center;
-            margin-top: 30px;
-            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
         }
 
         .tech-icon {
             font-size: 3rem;
-            margin: 0 15px;
-            color: white;
-            transition: transform 0.3s ease;
-            animation: float 3s ease-in-out infinite;
+            color: rgba(244, 244, 244, 0.6);
+            transition: all 0.3s ease;
         }
 
         .tech-icon:hover {
-            transform: scale(1.2) rotate(360deg);
+            color: var(--accent-blue);
+            transform: scale(1.2) rotate(10deg);
         }
 
         .section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            border-radius: 10px;
+            padding: 100px 0;
+            background: var(--deep-black);
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
-            color: var(--primary-color);
+            margin-bottom: 60px;
+            font-size: 3rem;
+            color: var(--soft-white);
             position: relative;
         }
 
@@ -116,29 +140,30 @@
             position: absolute;
             bottom: -10px;
             left: 50%;
-            transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background: var(--primary-color);
+            background: var(--accent-blue);
+            transform: translateX(-50%);
         }
 
         .experience-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
 
         .experience-card {
-            background: #f9f9f9;
+            background: rgba(44, 62, 80, 0.5);
+            border-radius: 15px;
             padding: 30px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
         }
 
         .experience-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transform: translateY(-15px);
+            background: rgba(44, 62, 80, 0.7);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
         }
 
         .skills-container {
@@ -148,171 +173,141 @@
             gap: 20px;
         }
 
-        .skill-bubble {
-            background: var(--primary-color);
-            color: white;
+        .skill-tag {
+            background: rgba(52, 152, 219, 0.2);
+            color: var(--accent-blue);
             padding: 10px 20px;
             border-radius: 50px;
-            margin: 5px;
-            display: flex;
-            align-items: center;
-            transition: transform 0.3s ease;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        .skill-bubble:hover {
-            transform: scale(1.1);
-        }
-
-        .skill-bubble i {
-            margin-right: 10px;
+        .skill-tag:hover {
+            background: rgba(52, 152, 219, 0.3);
+            transform: scale(1.05);
         }
 
         .contact {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            color: white;
+            background: linear-gradient(135deg, var(--deep-black), #1A1A1A);
             text-align: center;
-            padding: 50px 20px;
+            padding: 100px 0;
         }
 
-        .social-links {
+        .contact-links {
             display: flex;
             justify-content: center;
-            margin-top: 30px;
+            gap: 40px;
+            margin-top: 40px;
         }
 
-        .social-link {
-            font-size: 2rem;
-            margin: 0 15px;
-            color: white;
-            transition: transform 0.3s ease;
+        .contact-link {
+            color: var(--soft-white);
+            font-size: 2.5rem;
+            transition: all 0.3s ease;
         }
 
-        .social-link:hover {
-            transform: scale(1.2) rotate(360deg);
+        .contact-link:hover {
+            color: var(--accent-blue);
+            transform: scale(1.2);
         }
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
-            .hero p {
-                font-size: 1.2rem;
-            }
-            .tech-icon {
-                font-size: 2rem;
-                margin: 0 10px;
+            .tech-stack {
+                flex-wrap: wrap;
+                gap: 20px;
             }
         }
     </style>
 </head>
 <body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">NG</a>
+            <nav class="nav">
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
     <section class="hero">
-        <div class="hero-content">
-            <h1>Nithin Gopinath</h1>
-            <p>Transforming Data into Intelligent Solutions | AI Architect | Graph Database Expert</p>
-            
-            <div class="tech-icons">
-                <i class="fab fa-python tech-icon" title="Python"></i>
-                <i class="fab fa-js tech-icon" title="JavaScript"></i>
-                <i class="fas fa-database tech-icon" title="Database"></i>
-                <i class="fab fa-aws tech-icon" title="Cloud"></i>
-                <i class="fas fa-brain tech-icon" title="AI/ML"></i>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Nithin Gopinath</h1>
+                <p class="hero-subtitle">
+                    AI Solutions Architect | Transforming Complex Data into Intelligent Systems
+                </p>
+                <div class="tech-stack">
+                    <i class="fab fa-python tech-icon" title="Python"></i>
+                    <i class="fab fa-js tech-icon" title="JavaScript"></i>
+                    <i class="fas fa-database tech-icon" title="Databases"></i>
+                    <i class="fab fa-aws tech-icon" title="Cloud"></i>
+                    <i class="fas fa-brain tech-icon" title="AI/ML"></i>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2 class="section-title">Professional Experience</h2>
-        <div class="experience-grid">
-            <div class="experience-card">
-                <h3>🚀 Senior AI Consultant</h3>
-                <p>EY - London, UK | Jan 2022 - Present</p>
-                <ul>
-                    <li>Pioneered graph database solutions</li>
-                    <li>Developed AI-powered contract analytics</li>
-                    <li>Created predictive market analysis tools</li>
-                </ul>
-            </div>
-            <div class="experience-card">
-                <h3>💡 Technology Consultant</h3>
-                <p>EY - Kerala, India | Aug 2017 - Dec 2021</p>
-                <ul>
-                    <li>Implemented AI meeting scheduler</li>
-                    <li>Developed computer vision solutions</li>
-                    <li>Created NLP-driven market research tools</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <h2 class="section-title">Core Skills</h2>
-        <div class="skills-container">
-            <div class="skill-bubble">
-                <i class="fas fa-code"></i> Python
-            </div>
-            <div class="skill-bubble">
-                <i class="fas fa-brain"></i> Machine Learning
-            </div>
-            <div class="skill-bubble">
-                <i class="fas fa-database"></i> Graph Databases
-            </div>
-            <div class="skill-bubble">
-                <i class="fas fa-cloud"></i> Cloud Computing
-            </div>
-            <div class="skill-bubble">
-                <i class="fas fa-chart-line"></i> Data Analytics
-            </div>
-            <div class="skill-bubble">
-                <i class="fas fa-robot"></i> AI Development
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Journey</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3>Senior AI Consultant</h3>
+                    <p>EY - London, UK | Jan 2022 - Present</p>
+                    <ul>
+                        <li>Architected graph database solutions</li>
+                        <li>Developed AI-powered contract analytics</li>
+                        <li>Created predictive market intelligence</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3>Technology Consultant</h3>
+                    <p>EY - Kerala, India | Aug 2017 - Dec 2021</p>
+                    <ul>
+                        <li>Built AI meeting coordination system</li>
+                        <li>Developed computer vision solutions</li>
+                        <li>Created NLP market research tools</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2 class="section-title">Certifications</h2>
-        <div class="experience-grid">
-            <div class="experience-card">
-                <h3>🏆 Data Engineering</h3>
-                <p>Quantexa Certified | Sept 2023</p>
-            </div>
-            <div class="experience-card">
-                <h3>🔬 Graph Database Expert</h3>
-                <p>Neo4j Certified | Mar 2023</p>
-            </div>
-            <div class="experience-card">
-                <h3>🧠 AI Fundamentals</h3>
-                <p>Databricks Certified | Aug 2023</p>
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Core Skills</h2>
+            <div class="skills-container">
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">Machine Learning</div>
+                <div class="skill-tag">Graph Databases</div>
+                <div class="skill-tag">Cloud Computing</div>
+                <div class="skill-tag">Data Analytics</div>
+                <div class="skill-tag">AI Engineering</div>
             </div>
         </div>
     </section>
 
-    <section class="contact">
-        <h2>Let's Connect!</h2>
-        <p>Transforming complex data challenges into innovative solutions</p>
-        <div class="social-links">
-            <a href="mailto:nithingopinath006@gmail.com" class="social-link">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/nithingopinath" target="_blank" class="social-link">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/nithingopinath" target="_blank" class="social-link">
-                <i class="fab fa-github"></i>
-            </a>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p>Building intelligent solutions that drive innovation</p>
+            <div class="contact-links">
+                <a href="mailto:nithingopinath006@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/nithingopinath" class="contact-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/nithingopinath" class="contact-link">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
         </div>
     </section>
-
-    <script>
-        // Optional: Add some interactive animations
-        document.querySelectorAll('.tech-icon, .skill-bubble').forEach(el => {
-            el.addEventListener('mouseenter', function() {
-                this.style.animation = 'pulse 0.5s ease-in-out';
-            });
-            el.addEventListener('animationend', function() {
-                this.style.animation = '';
-            });
-        });
-    </script>
 </body>
 </html>
