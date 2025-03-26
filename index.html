@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nithin Gopinath - Tech Innovator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --accent-color: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f6f8f9 0%, #e5ebee 100%);
+            color: var(--text-color);
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tech-icon {
+            font-size: 3rem;
+            margin: 0 15px;
+            color: white;
+            transition: transform 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .tech-icon:hover {
+            transform: scale(1.2) rotate(360deg);
+        }
+
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--primary-color);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .experience-card {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skill-bubble {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin: 5px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-bubble:hover {
+            transform: scale(1.1);
+        }
+
+        .skill-bubble i {
+            margin-right: 10px;
+        }
+
+        .contact {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            font-size: 2rem;
+            margin: 0 15px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: scale(1.2) rotate(360deg);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .tech-icon {
+                font-size: 2rem;
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Nithin Gopinath</h1>
+            <p>Transforming Data into Intelligent Solutions | AI Architect | Graph Database Expert</p>
+            
+            <div class="tech-icons">
+                <i class="fab fa-python tech-icon" title="Python"></i>
+                <i class="fab fa-js tech-icon" title="JavaScript"></i>
+                <i class="fas fa-database tech-icon" title="Database"></i>
+                <i class="fab fa-aws tech-icon" title="Cloud"></i>
+                <i class="fas fa-brain tech-icon" title="AI/ML"></i>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <h3>🚀 Senior AI Consultant</h3>
+                <p>EY - London, UK | Jan 2022 - Present</p>
+                <ul>
+                    <li>Pioneered graph database solutions</li>
+                    <li>Developed AI-powered contract analytics</li>
+                    <li>Created predictive market analysis tools</li>
+                </ul>
+            </div>
+            <div class="experience-card">
+                <h3>💡 Technology Consultant</h3>
+                <p>EY - Kerala, India | Aug 2017 - Dec 2021</p>
+                <ul>
+                    <li>Implemented AI meeting scheduler</li>
+                    <li>Developed computer vision solutions</li>
+                    <li>Created NLP-driven market research tools</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Core Skills</h2>
+        <div class="skills-container">
+            <div class="skill-bubble">
+                <i class="fas fa-code"></i> Python
+            </div>
+            <div class="skill-bubble">
+                <i class="fas fa-brain"></i> Machine Learning
+            </div>
+            <div class="skill-bubble">
+                <i class="fas fa-database"></i> Graph Databases
+            </div>
+            <div class="skill-bubble">
+                <i class="fas fa-cloud"></i> Cloud Computing
+            </div>
+            <div class="skill-bubble">
+                <i class="fas fa-chart-line"></i> Data Analytics
+            </div>
+            <div class="skill-bubble">
+                <i class="fas fa-robot"></i> AI Development
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Certifications</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <h3>🏆 Data Engineering</h3>
+                <p>Quantexa Certified | Sept 2023</p>
+            </div>
+            <div class="experience-card">
+                <h3>🔬 Graph Database Expert</h3>
+                <p>Neo4j Certified | Mar 2023</p>
+            </div>
+            <div class="experience-card">
+                <h3>🧠 AI Fundamentals</h3>
+                <p>Databricks Certified | Aug 2023</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Let's Connect!</h2>
+        <p>Transforming complex data challenges into innovative solutions</p>
+        <div class="social-links">
+            <a href="mailto:nithingopinath006@gmail.com" class="social-link">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/nithingopinath" target="_blank" class="social-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/nithingopinath" target="_blank" class="social-link">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Optional: Add some interactive animations
+        document.querySelectorAll('.tech-icon, .skill-bubble').forEach(el => {
+            el.addEventListener('mouseenter', function() {
+                this.style.animation = 'pulse 0.5s ease-in-out';
+            });
+            el.addEventListener('animationend', function() {
+                this.style.animation = '';
+            });
+        });
+    </script>
+</body>
+</html>
