@@ -1,4 +1,841 @@
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nithin Gopinath | AI Solutions Architect</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --deep-black: #0A0A0A;
+            --soft-white: #F4F4F4;
+            --accent-blue: #3498DB;
+            --accent-green: #2ECC71;
+            --dark-gray: #2C3E50;
+            --light-gray: #546E7A;
+            --card-hover: rgba(52, 152, 219, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--deep-black);
+            color: var(--soft-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(244, 244, 244, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--soft-white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo .highlight {
+            color: var(--accent-blue);
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: rgba(244, 244, 244, 0.7);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--soft-white);
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--accent-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+            color: rgba(244, 244, 244, 0.8);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            color: rgba(244, 244, 244, 0.6);
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tech-icon {
+            font-size: 2.5rem;
+            color: rgba(244, 244, 244, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .tech-name {
+            font-size: 0.8rem;
+            color: rgba(244, 244, 244, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover .tech-icon {
+            color: var(--accent-blue);
+            transform: translateY(-5px);
+        }
+
+        .tech-item:hover .tech-name {
+            color: var(--accent-green);
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--soft-white);
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--accent-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: rgba(244, 244, 244, 0.6);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .experience-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent-blue), var(--accent-green));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        .timeline-item {
+            padding: 20px 30px;
+            position: relative;
+            width: calc(50% - 30px);
+            margin-bottom: 50px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -40px;
+            background-color: var(--accent-blue);
+            border-radius: 50%;
+            top: 20px;
+            box-shadow: 0 0 15px var(--accent-blue);
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -40px;
+        }
+
+        .timeline-content {
+            background: rgba(44, 62, 80, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(244, 244, 244, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            background: rgba(44, 62, 80, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(244, 244, 244, 0.2);
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--soft-white);
+        }
+
+        .timeline-desc {
+            color: rgba(244, 244, 244, 0.7);
+            margin-bottom: 15px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: rgba(44, 62, 80, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(244, 244, 244, 0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            background: var(--card-hover);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-blue);
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--soft-white);
+        }
+
+        .project-desc {
+            color: rgba(244, 244, 244, 0.7);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .tech-tag {
+            background: rgba(52, 152, 219, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--accent-blue);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: rgba(44, 62, 80, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(244, 244, 244, 0.1);
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-blue);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 15px;
+            color: rgba(244, 244, 244, 0.8);
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-list li::before {
+            content: '•';
+            color: var(--accent-green);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .education-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .education-card {
+            background: rgba(44, 62, 80, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(244, 244, 244, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .education-card:hover {
+            background: rgba(44, 62, 80, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .education-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--soft-white);
+        }
+
+        .education-card p {
+            color: rgba(244, 244, 244, 0.7);
+        }
+
+        .education-card .date {
+            color: var(--accent-blue);
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .contact-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(44, 62, 80, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(244, 244, 244, 0.1);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .contact-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--soft-white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 15px;
+        }
+
+        .contact-link i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link span {
+            font-size: 0.9rem;
+            color: rgba(244, 244, 244, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover i {
+            color: var(--accent-blue);
+            transform: translateY(-5px);
+        }
+
+        .contact-link:hover span {
+            color: var(--soft-white);
+        }
+
+        .footer {
+            background: rgba(10, 10, 10, 0.8);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid rgba(244, 244, 244, 0.1);
+            margin-top: 100px;
+        }
+
+        .footer-text {
+            color: rgba(244, 244, 244, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .credential-item {
+            background: rgba(44, 62, 80, 0.2);
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(244, 244, 244, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .credential-item:hover {
+            background: rgba(44, 62, 80, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .credential-item img {
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .credential-item h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--soft-white);
+        }
+
+        .credential-item p {
+            font-size: 0.8rem;
+            color: rgba(244, 244, 244, 0.6);
+        }
+
+        .publications {
+            margin-top: 60px;
+        }
+
+        .publication-item {
+            margin-bottom: 20px;
+        }
+
+        .publication-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            word-break: break-all;
+        }
+
+        .publication-link:hover {
+            color: var(--accent-green);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 992px) {
+            .experience-timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: calc(100% - 60px);
+                left: 60px !important;
+            }
+            
+            .timeline-item::after {
+                left: -30px !important;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+            
+            .nav {
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .contact-links {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .timeline-content {
+                padding: 20px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fadeIn {
+            animation: fadeIn 1s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">N<span class="highlight">G</span></a>
+        <nav class="nav">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Nithin Gopinath</h1>
+        <p>Data & AI Specialist — Technology Consultant — Graph Database Expert — Generative AI Architect</p>
+        <div class="hero-subtitle">
+            Results-driven Senior Consultant with over seven years of experience in AI implementation, transforming businesses through innovative data solutions.
+        </div>
+        <div class="tech-stack">
+            <div class="tech-item">
+                <i class="fab fa-python tech-icon" title="Python"></i>
+                <span class="tech-name">Python</span>
+            </div>
+            <div class="tech-item">
+                <i class="fas fa-brain tech-icon" title="AI & ML"></i>
+                <span class="tech-name">AI & ML</span>
+            </div>
+            <div class="tech-item">
+                <i class="fas fa-database tech-icon" title="Graph Databases"></i>
+                <span class="tech-name">Graph Databases</span>
+            </div>
+            <div class="tech-item">
+                <i class="fab fa-aws tech-icon" title="Cloud Computing"></i>
+                <span class="tech-name">Cloud</span>
+            </div>
+            <div class="tech-item">
+                <i class="fas fa-laptop-code tech-icon" title="LLMs"></i>
+                <span class="tech-name">LLMs</span>
+            </div>
+            <div class="tech-item">
+                <i class="fas fa-chart-network tech-icon"></i>
+                <span class="tech-name">Deep Learning</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Blending technical expertise with a business-first mindset to drive innovation</p>
+            </div>
+            <div class="about-content">
+                <p style="text-align: center; max-width: 800px; margin: 0 auto; color: rgba(244, 244, 244, 0.8);">
+                    I'm a Senior Consultant with over seven years of experience in AI implementation, data-driven solutions, and advanced analytics. I've worked extensively with financial institutions and enterprises, helping them leverage AI, machine learning, and cloud technologies to drive operational efficiency and optimize decision-making.<br><br>
+                    My expertise spans Python, deep learning frameworks, Generative AI, Large Language Models, SQL, and graph databases, enabling me to develop innovative solutions that transform business processes and unlock actionable insights.<br><br>
+                    With a strong foundation in data strategy, AI adoption, and automation, I collaborate effectively across teams to deliver scalable, AI-driven solutions that improve compliance, risk assessment, and business intelligence.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-subtitle">A journey of innovation and leadership in AI solutions</p>
+            </div>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">January 2022 - Present</span>
+                        <h3 class="timeline-title">Senior Consultant</h3>
+                        <h4 style="margin-bottom: 10px; color: var(--accent-blue);">EY - UK, London</h4>
+                        <p class="timeline-desc">
+                            Rapidly advanced to an Assistant Manager role by consistently surpassing performance benchmarks, delivering strategic AI solutions, and building a reputation for driving impactful transformation in complex, regulated environments.
+                        </p>
+                        <p class="timeline-desc">
+                            Headed AI and Generative AI initiatives within the team, helping to build AI and GenAI credentials by identifying key use cases, collecting innovative ideas, and developing prototypes that were showcased to clients and internal stakeholders.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">August 2017 - December 2021</span>
+                        <h3 class="timeline-title">Technology Consultant</h3>
+                        <h4 style="margin-bottom: 10px; color: var(--accent-blue);">EY - GDS, Kerala, India</h4>
+                        <p class="timeline-desc">
+                            Developed and implemented AI projects and tools for clients in various industries including finance.
+                        </p>
+                        <p class="timeline-desc">
+                            Mentored and supported junior colleagues in data analytics projects, providing guidance on methodology, tools, and best practices, resulting in improved team performance and skill development.
+                        </p>
+                        <p class="timeline-desc">
+                            Championed developing and deploying innovative AI products tailored to the FS industry, achieving high customer adoption and setting new standards for analytics and automation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Projects</h2>
+                <p class="section-subtitle">Transforming businesses with innovative AI and data solutions</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 class="project-title">AI Enablement for Insurance</h3>
+                    <p class="project-desc">
+                        Provided strategic consulting to a top insurance client, reviewing their AI strategy and supporting their Generative AI enablement. Led workshops with client stakeholders to gather AI use cases, categorize them based on various drivers, and align them with different domains. Designed an AI roadmap and successfully implemented three selected Generative AI use cases, significantly reducing manual effort.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">AI Strategy</span>
+                        <span class="tech-tag">Generative AI</span>
+                        <span class="tech-tag">Roadmapping</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Neo4j Graph Data Model</h3>
+                    <p class="project-desc">
+                        Designed and implemented a graph database solution to model complex relationships between financial products, client portfolios, and market indicators, enabling an advanced early warning system for data inconsistencies. Developed custom Cypher queries and interactive visualization dashboards using NeoDash, accelerating data inconsistency detection from days to minutes and enhancing data quality.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Neo4j</span>
+                        <span class="tech-tag">Graph Database</span>
+                        <span class="tech-tag">Cypher</span>
+                        <span class="tech-tag">NeoDash</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">LLM-Based Contract Analytics</h3>
+                    <p class="project-desc">
+                        Developed an end-to-end solution using Python and GPT-4o model, leveraging large language models to automate the extraction, analysis, and validation of critical data from complex financial and legal contracts. Employed ChromaDB as a vector store for efficient document retrieval and incorporated retrieval-augmented generation (RAG) techniques, achieving 92% accuracy in identifying compliance issues and reducing manual review effort by 60%.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">GPT-4o</span>
+                        <span class="tech-tag">ChromaDB</span>
+                        <span class="tech-tag">RAG</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Pre-Accident Vehicle Damage Detection</h3>
+                    <p class="project-desc">
+                        Developed a tool using LLMs to classify and distinguish pre-accident and post-accident vehicle damages for an insurance firm to streamline claims processing. Leveraged GPT-4o model to analyze vehicle images, accurately identifying and categorizing damages, significantly reducing manual effort in claim verification and enhancing claim assessment speed.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">LLMs</span>
+                        <span class="tech-tag">Image Processing</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Intelligent Meeting Scheduler</h3>
+                    <p class="project-desc">
+                        Led the end-to-end backend development of an automated meeting scheduling system that analyzed historical meeting patterns, travel expenses, and resource availability to streamline global meeting logistics across EY offices. Acted as the Subject Matter Expert for the backend technology stack and deployed the platform to Microsoft Azure, achieving significant cost savings by reducing global internal firm business travel costs by USD 3 million.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">Backend Development</span>
+                        <span class="tech-tag">Data Analysis</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Focus Group Analyser</h3>
+                    <p class="project-desc">
+                        Co-developed a deep learning-based tool using Python to perform real-time analysis of focus group interviews, extracting valuable insights from customer feedback across multiple channels. Integrated IBM Watson Tone Analyzer to assess emotions and sentiments in text, alongside IBM Speech to Text for extracting real-time transcriptions from voice data, enabling seamless analysis of spoken focus group discussions.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Deep Learning</span>
+                        <span class="tech-tag">IBM Watson</span>
+                        <span class="tech-tag">NLP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">A diverse toolkit for creating innovative solutions</p>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>HTML/CSS</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                        <li>TypeScript</li>
+                        <li>Scala</li>
+                        <li>LaTeX</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud Platforms</h3>
+                    <ul class="skill-list">
+                        <li>Microsoft Azure</li>
+                        <li>Azure Databricks</li>
+                        <li>Azure Machine Learning</li>
+                        <li>IBM Cloud</li>
+                        <li>AWS</li>
+                        <li>Google Cloud Platform</li>
+                        <li>Microsoft Power Platform</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>AI & Machine Learning</h3>
+                    <ul class="skill-list">
+                        <li>Deep Learning Frameworks</li>
+                        <li>TensorFlow</li>
+                        <li>Keras</li>
+                        <li>PyTorch</li>
+                        <li>Large Language Models</li>
+                        <li>Generative AI</li>
+                        <li>Retrieval-Augmented Generation</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases & Frameworks</h3>
+                    <ul class="skill-list">
+                        <li>MongoDB</li>
+                        <li>Firebase</li>
+                        <li>Neo4j</li>
+                        <li>Flask</li>
+                        <li>FastAPI</li>
+                        <li>ChromaDB</li>
+                    </ul>
+                </div>
+                </div>
         </div>
     </section>
 
