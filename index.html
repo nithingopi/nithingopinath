@@ -1,193 +1,163 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nithin Gopinath | AI Solutions Architect</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --deep-black: #0A0A0A;
-            --soft-white: #F4F4F4;
-            --accent-blue: #3498DB;
-            --accent-green: #2ECC71;
-            --dark-gray: #2C3E50;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'SF Pro Display', sans-serif;
-        }
-
-        body {
-            background-color: var(--deep-black);
-            color: var(--soft-white);
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--soft-white);
-            text-decoration: none;
-        }
-
-        .nav {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-link {
-            color: rgba(244, 244, 244, 0.7);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--accent-blue);
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            background: linear-gradient(45deg, var(--accent-blue), var(--accent-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .tech-stack {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .tech-icon {
-            font-size: 3rem;
-            color: rgba(244, 244, 244, 0.7);
-            transition: all 0.3s ease;
-        }
-
-        .tech-icon:hover {
-            color: var(--accent-blue);
-            transform: scale(1.2);
-        }
-
-        .section {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            color: var(--soft-white);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .project-card {
-            background: rgba(44, 62, 80, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            background: rgba(44, 62, 80, 1);
-            transform: translateY(-5px);
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <a href="#" class="logo">NG</a>
-        <nav class="nav">
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Nithin Gopinath</h1>
-        <p>AI Solutions Architect | Generative AI Specialist</p>
-        <div class="tech-stack">
-            <i class="fab fa-python tech-icon" title="Python"></i>
-            <i class="fas fa-brain tech-icon" title="AI & ML"></i>
-            <i class="fas fa-database tech-icon" title="Graph Databases"></i>
-            <i class="fab fa-aws tech-icon" title="Cloud Computing"></i>
+</div>
         </div>
     </section>
 
-    <section id="projects" class="section">
-        <h2 class="section-title">Key Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Graph-Based Wealth Management System</h3>
-                <p>Built a Neo4j-powered solution to detect financial anomalies, enhancing data integrity.</p>
+    <section id="education" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education & Certifications</h2>
+                <p class="section-subtitle">Academic foundation and professional qualifications</p>
             </div>
-            <div class="project-card">
-                <h3>LLM-Based Contract Analytics</h3>
-                <p>Developed a generative AI tool to automate contract reviews, reducing manual effort by 60%.</p>
+            
+            <h3 style="text-align: center; margin-bottom: 40px; color: var(--accent-blue);">Education</h3>
+            <div class="education-cards">
+                <div class="education-card">
+                    <h3>Master of Technology</h3>
+                    <p>Computer Science</p>
+                    <p>Amrita School of Engineering</p>
+                    <p>Kerala, India</p>
+                    <p class="date">2015 - 2017</p>
+                </div>
+                <div class="education-card">
+                    <h3>Bachelor of Technology</h3>
+                    <p>Computer Science</p>
+                    <p>Amrita School of Engineering</p>
+                    <p>Kerala, India</p>
+                    <p class="date">2011 - 2015</p>
+                </div>
             </div>
-            <div class="project-card">
-                <h3>AI-Powered Car Damage Detection</h3>
-                <p>Created a deep learning model to assess vehicle damage from images, optimizing insurance claims.</p>
+            
+            <h3 style="text-align: center; margin: 60px 0 40px; color: var(--accent-blue);">Certifications</h3>
+            <div class="credentials">
+                <div class="credential-item">
+                    <i class="fas fa-certificate" style="font-size: 2.5rem; color: var(--accent-green); margin-bottom: 15px;"></i>
+                    <h4>Quantexa Certified Data Engineer</h4>
+                    <p>September 2023</p>
+                    <p style="margin-top: 5px; font-style: italic;">Data Engineering, Data Modeling, Network Generation</p>
+                </div>
+                <div class="credential-item">
+                    <i class="fab fa-microsoft" style="font-size: 2.5rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                    <h4>DP 900: Azure Data Fundamentals</h4>
+                    <p>August 2021</p>
+                </div>
+                <div class="credential-item">
+                    <i class="fab fa-microsoft" style="font-size: 2.5rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                    <h4>AI 900: Azure AI Fundamentals</h4>
+                    <p>August 2021</p>
+                </div>
+                <div class="credential-item">
+                    <i class="fab fa-microsoft" style="font-size: 2.5rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                    <h4>AZ 900: Azure Fundamentals</h4>
+                    <p>August 2021</p>
+                </div>
+            </div>
+            
+            <div class="publications">
+                <h3 style="text-align: center; margin: 60px 0 40px; color: var(--accent-blue);">Publications</h3>
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <div class="publication-item">
+                        <a href="https://ieeexplore.ieee.org/document/7375266" class="publication-link" target="_blank">
+                            <i class="fas fa-file-alt" style="margin-right: 10px;"></i>
+                            https://ieeexplore.ieee.org/document/7375266
+                        </a>
+                    </div>
+                    <div class="publication-item">
+                        <a href="https://www.youtube.com/watch?v=UsBQt6YWl3Q" class="publication-link" target="_blank">
+                            <i class="fab fa-youtube" style="margin-right: 10px;"></i>
+                            https://www.youtube.com/watch?v=UsBQt6YWl3Q
+                        </a>
+                        <p style="font-size: 0.9rem; color: rgba(244, 244, 244, 0.6); margin-top: 5px;">
+                            Architect and lead backend developer of the tool showcased in this video
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section">
-        <h2 class="section-title">Let's Connect</h2>
-        <div class="contact-links">
-            <a href="mailto:nithingopinath006@gmail.com" class="contact-link">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/nithingopinath" class="contact-link">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/nithingopinath" class="contact-link">
-                <i class="fab fa-github"></i>
-            </a>
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Interested in collaborating or discussing AI solutions? Reach out!</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info" style="text-align: center; margin-bottom: 30px;">
+                    <p style="color: rgba(244, 244, 244, 0.8);">
+                        <i class="fas fa-map-marker-alt" style="color: var(--accent-blue); margin-right: 10px;"></i>
+                        Manchester, UK
+                    </p>
+                    <p style="color: rgba(244, 244, 244, 0.8); margin-top: 10px;">
+                        <i class="fas fa-phone" style="color: var(--accent-blue); margin-right: 10px;"></i>
+                        +44 7776807286
+                    </p>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:nithingopinath006@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nithingopinath" class="contact-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/nithingopinath" class="contact-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2025 Nithin Gopinath. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for elements as they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate sections on scroll
+            const sections = document.querySelectorAll('.section');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fadeIn');
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                observer.observe(section);
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
